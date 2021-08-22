@@ -24,8 +24,8 @@ export default function App() {
 
   // const handlePress = () => console.log("TEXT PRESSED");
   return (
-    // <WelcomeScreen />
-    <ViewImageScreen />
+    <WelcomeScreen />
+    // <ViewImageScreen />
     // <SafeAreaView style={styles.container}>
     //   <Text onPress={handlePress}>1234</Text>
     //   <TouchableWithoutFeedback

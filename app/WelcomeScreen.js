@@ -1,11 +1,13 @@
 import React from "react";
 import { Image, ImageBackground, StyleSheet, Text, View } from "react-native";
 
-import colors from "./config/colors"
+import colors from "./config/colors";
+import AppButton from "./components/AppButton";
 
 function WelcomeScreen() {
   return (
     <ImageBackground
+      blurRadius={2}
       style={styles.background}
       source={require("./assets/background.jpg")}
     >
@@ -14,9 +16,20 @@ function WelcomeScreen() {
           style={styles.brandLogo}
           source={require("./assets/logo-red.png")}
         />
-        <Text>Sell What You Don't Need.</Text>
+        <Text style={styles.tagline}>Sell What You Don't Need.</Text>
       </View>
-      <View style={styles.loginBtn}></View>
+      <View style={styles.btnsContainer}>
+        <AppButton
+          title="Login"
+          onPress={() => console.log("User Login")}
+          color="primary"
+        />
+        <AppButton
+          title="Register"
+          onPress={() => console.log("Register User")}
+          color="secondary"
+        />
+      </View>
       <View style={styles.registerBtn}></View>
     </ImageBackground>
   );
@@ -37,15 +50,14 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100,
   },
-  loginBtn: {
+  btnsContainer: {
     width: "100%",
-    height: 70,
-    backgroundColor: colors?.primary,
+    padding: 20,
   },
-  registerBtn: {
-    width: "100%",
-    height: 70,
-    backgroundColor: colors?.secondary,
+  tagline: {
+    fontSize: 25,
+    fontWeight: "bold",
+    paddingVertical: 20,
   },
 });
 
