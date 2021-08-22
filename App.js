@@ -16,6 +16,9 @@ import {
   Dimensions,
 } from "react-native";
 
+import Card from "./app/components/Card";
+import ListingDetailsScreen from "./app/components/ListingDetailsScreen";
+
 export default function App() {
   // console.log(Dimensions.get("screen"));
   // console.log(Dimensions.get("window"));
@@ -24,8 +27,12 @@ export default function App() {
 
   // const handlePress = () => console.log("TEXT PRESSED");
   return (
-    <WelcomeScreen />
-    // <ViewImageScreen />
+    // <ListingDetailsScreen />
+    // <WelcomeScreen />
+    // <View style={{ backgroundColor: "#f8f4f4", padding: 20, paddingTop: 100 }}>
+    //   <Card title="Red jacket for sale" subTitle="$100" />
+    // </View>
+    <ViewImageScreen />
     // <SafeAreaView style={styles.container}>
     //   <Text onPress={handlePress}>1234</Text>
     //   <TouchableWithoutFeedback
