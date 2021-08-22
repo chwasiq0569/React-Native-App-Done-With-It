@@ -6,7 +6,7 @@ import AppText from "./AppText";
 function ListItem({ title, subTitle, image }) {
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("../assets/mosh.jpg")} />
+      <Image style={styles.image} source={image} />
       <View>
         <AppText style={styles.title}>{title}</AppText>
         <AppText style={styles.subTitle}>{subTitle}</AppText>
@@ -21,7 +21,6 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     flexDirection: "row",
-    padding: 20,
   },
   image: {
     width: 70,

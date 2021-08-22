@@ -18,6 +18,7 @@ import {
 
 import Card from "./app/components/Card";
 import ListingDetailsScreen from "./app/components/ListingDetailsScreen";
+import MessagesScreen from "./app/MessagesScreen";
 
 export default function App() {
   // console.log(Dimensions.get("screen"));
@@ -32,7 +33,8 @@ export default function App() {
     // <View style={{ backgroundColor: "#f8f4f4", padding: 20, paddingTop: 100 }}>
     //   <Card title="Red jacket for sale" subTitle="$100" />
     // </View>
-    <ViewImageScreen />
+    // <ViewImageScreen />
+    <MessagesScreen />
     // <SafeAreaView style={styles.container}>
     //   <Text onPress={handlePress}>1234</Text>
     //   <TouchableWithoutFeedback
