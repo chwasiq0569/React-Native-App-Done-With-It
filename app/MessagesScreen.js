@@ -5,9 +5,12 @@ import {
   SafeAreaView,
   StatusBar,
   StyleSheet,
+  View,
 } from "react-native";
 import ListItem from "./components/ListItem";
 import Constants from "expo-constants";
+import Screen from "./components/Screen";
+import ListItemSeperator from "./components/ListItemSeperator";
 
 function MessagesScreen(props) {
   const messages = [
@@ -26,7 +29,7 @@ function MessagesScreen(props) {
   ];
 
   return (
-    <SafeAreaView style={styles.screen}>
+    <Screen>
       <FlatList
         data={messages}
         keyExtractor={(message) => message.id.toString()}
@@ -37,8 +40,9 @@ function MessagesScreen(props) {
             image={item.image}
           />
         )}
+        ItemSeparatorComponent={ListItemSeperator}
       />
-    </SafeAreaView>
+    </Screen>
   );
 }
 
