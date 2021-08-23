@@ -11,6 +11,8 @@ import ListItem from "./components/ListItem";
 import Constants from "expo-constants";
 import Screen from "./components/Screen";
 import ListItemSeperator from "./components/ListItemSeperator";
+import { Swipeable } from "react-native-gesture-handler";
+import ListItemDeleteAction from "./components/ListItemDeleteAction";
 
 function MessagesScreen(props) {
   const messages = [
@@ -34,11 +36,14 @@ function MessagesScreen(props) {
         data={messages}
         keyExtractor={(message) => message.id.toString()}
         renderItem={({ item }) => (
-          <ListItem
-            title={item.title}
-            subTitle={item.subTitle}
-            image={item.image}
-          />
+          <Swipeable renderRightActions={ListItemDeleteAction}>
+            <ListItem
+              title={item.title}
+              subTitle={item.subTitle}
+              image={item.image}
+              onPress={() => console.log()}
+            />
+          </Swipeable>
         )}
         ItemSeparatorComponent={ListItemSeperator}
       />
