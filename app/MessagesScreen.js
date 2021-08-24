@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   FlatList,
   Platform,
@@ -15,7 +15,7 @@ import { Swipeable } from "react-native-gesture-handler";
 import ListItemDeleteAction from "./components/ListItemDeleteAction";
 
 function MessagesScreen(props) {
-  const messages = [
+  const initialMessages = [
     {
       id: 1,
       title: "T1",
@@ -30,13 +30,25 @@ function MessagesScreen(props) {
     },
   ];
 
+  const [messages, setMessages] = useState(initialMessages);
+
+  const [refreshing, setRefreshing] = useState(false);
+
+  const handleDelete = (message) => {
+    setMessages([...messages.filter((m) => m.id != message.id)]);
+  };
+
   return (
     <Screen>
       <FlatList
         data={messages}
         keyExtractor={(message) => message.id.toString()}
         renderItem={({ item }) => (
-          <Swipeable renderRightActions={ListItemDeleteAction}>
+          <Swipeable
+            renderRightActions={() => (
+              <ListItemDeleteAction onPress={() => handleDelete(item)} />
+            )}
+          >
             <ListItem
               title={item.title}
               subTitle={item.subTitle}
@@ -46,6 +58,17 @@ function MessagesScreen(props) {
           </Swipeable>
         )}
         ItemSeparatorComponent={ListItemSeperator}
+        refreshing={refreshing}
+        onRefresh={() => {
+          setMessages([
+            {
+              id: 2,
+              title: "T2",
+              subTitle: "D2",
+              image: require("./assets/mosh.jpg"),
+            },
+          ]);
+        }}
       />
     </Screen>
   );
