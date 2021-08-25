@@ -13,15 +13,15 @@ function Icon({ image, backgroundColor }) {
 
 const styles = StyleSheet.create({
   container: {
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 30,
   },
   image: {
-    width: 50,
-    height: 50,
+    width: 25,
+    height: 25,
   },
 });
 

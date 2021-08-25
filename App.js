@@ -22,6 +22,7 @@ import MessagesScreen from "./app/MessagesScreen";
 import Icon from "./app/components/Icon";
 import Screen from "./app/components/Screen";
 import ListItem from "./app/components/ListItem";
+import AccountScreen from "./app/AccountScreen";
 
 export default function App() {
   // console.log(Dimensions.get("screen"));
@@ -38,21 +39,7 @@ export default function App() {
     // </View>
     // <ViewImageScreen />
     // <MessagesScreen />
-    <Screen>
-      <Text>ICON</Text>
-      {/* <Icon image={require("./app/assets/delete.png")} backgroundColor="red" /> */}
-      <ListItem
-        title="Title"
-        subTitle="subTitle"
-        ImageComponent={
-          <Icon
-            image={require("./app/assets/delete.png")}
-            backgroundColor="red"
-          />
-        }
-        onPress={() => console.log("CLICKED")}
-      />
-    </Screen>
+    <AccountScreen />
     // <SafeAreaView style={styles.container}>
     //   <Text onPress={handlePress}>1234</Text>
     //   <TouchableWithoutFeedback
