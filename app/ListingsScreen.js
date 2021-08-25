@@ -22,15 +22,15 @@ const listings = [
 
 function ListingsScreen(props) {
   return (
-    <Screen style={styles.container}>
-      {/* <FlatList
+    <Screen style={styles.screen}>
+      <FlatList
         data={listings}
         keyExtractor={(listings) => listings.id.toString()}
         renderItem={({ item }) => (
           <Card image={item.image} title={item.title} subTitle={item.price} />
         )}
-      /> */}
-      <Card
+      />
+      {/* <Card
         image={require("./assets/jacket.jpg")}
         title="Red jacked for sale"
         subTitle="100"
@@ -39,14 +39,14 @@ function ListingsScreen(props) {
         image={require("./assets/couch.jpg")}
         title="Couch in great condition"
         subTitle="1000"
-      />
+      /> */}
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "red",
+  screen: {
+    paddingHorizontal: 20,
   },
 });
 

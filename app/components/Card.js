@@ -24,6 +24,7 @@ const styles = StyleSheet.create({
     // height: "100%",
     overflow: "hidden",
     borderRadius: 15,
+    marginVertical: 10,
   },
   detailsContainer: {
     backgroundColor: colors.white,
