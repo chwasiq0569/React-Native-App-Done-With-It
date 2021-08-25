@@ -19,6 +19,9 @@ import {
 import Card from "./app/components/Card";
 import ListingDetailsScreen from "./app/components/ListingDetailsScreen";
 import MessagesScreen from "./app/MessagesScreen";
+import Icon from "./app/components/Icon";
+import Screen from "./app/components/Screen";
+import ListItem from "./app/components/ListItem";
 
 export default function App() {
   // console.log(Dimensions.get("screen"));
@@ -34,7 +37,22 @@ export default function App() {
     //   <Card title="Red jacket for sale" subTitle="$100" />
     // </View>
     // <ViewImageScreen />
-    <MessagesScreen />
+    // <MessagesScreen />
+    <Screen>
+      <Text>ICON</Text>
+      {/* <Icon image={require("./app/assets/delete.png")} backgroundColor="red" /> */}
+      <ListItem
+        title="Title"
+        subTitle="subTitle"
+        ImageComponent={
+          <Icon
+            image={require("./app/assets/delete.png")}
+            backgroundColor="red"
+          />
+        }
+        onPress={() => console.log("CLICKED")}
+      />
+    </Screen>
     // <SafeAreaView style={styles.container}>
     //   <Text onPress={handlePress}>1234</Text>
     //   <TouchableWithoutFeedback
