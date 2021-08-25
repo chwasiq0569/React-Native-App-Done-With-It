@@ -7,7 +7,7 @@ import AppText from "./AppText";
 function Card({ image, title, subTitle }) {
   return (
     <View style={styles.card}>
-      <Image style={styles.image} source={require("../assets/jacket.jpg")} />
+      <Image style={styles.image} source={image} />
       <View style={styles.detailsContainer}>
         <AppText style={styles.title}>{title}</AppText>
         <AppText style={styles.subTitle}>{subTitle}</AppText>
@@ -20,8 +20,8 @@ export default Card;
 
 const styles = StyleSheet.create({
   card: {
-    width: "100%",
-    height: "100%",
+    // width: "100%",
+    // height: "100%",
     overflow: "hidden",
     borderRadius: 15,
   },

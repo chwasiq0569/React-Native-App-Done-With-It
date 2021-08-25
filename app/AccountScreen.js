@@ -4,6 +4,7 @@ import ListItem from "./components/ListItem";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import colors from "./config/colors";
 import Icon from "./components/Icon";
+import ListItemSeperator from "./components/ListItemSeperator";
 
 const menuItems = [
   {
@@ -46,9 +47,22 @@ function AccountScreen(props) {
                   backgroundColor={item.icon.backgroundColor}
                 />
               }
+              ItemSeparatorComponent={ListItemSeperator}
               onPress={() => console.log("CLICKED")}
             />
           )}
+        />
+      </View>
+      <View style={styles.container}>
+        <ListItem
+          title="Logout"
+          ImageComponent={
+            <Icon
+              image={require("./assets/logout.png")}
+              backgroundColor="#ffe66d"
+            />
+          }
+          onPress={() => console.log("CLICKED")}
         />
       </View>
     </Screen>

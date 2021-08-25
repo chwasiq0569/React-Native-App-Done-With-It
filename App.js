@@ -23,6 +23,7 @@ import Icon from "./app/components/Icon";
 import Screen from "./app/components/Screen";
 import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/AccountScreen";
+import ListingsScreen from "./app/ListingsScreen";
 
 export default function App() {
   // console.log(Dimensions.get("screen"));
@@ -39,7 +40,8 @@ export default function App() {
     // </View>
     // <ViewImageScreen />
     // <MessagesScreen />
-    <AccountScreen />
+    // <AccountScreen />
+    <ListingsScreen />
     // <SafeAreaView style={styles.container}>
     //   <Text onPress={handlePress}>1234</Text>
     //   <TouchableWithoutFeedback
