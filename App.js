@@ -24,6 +24,8 @@ import Screen from "./app/components/Screen";
 import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/AccountScreen";
 import ListingsScreen from "./app/ListingsScreen";
+import AppTextInput from "./app/components/AppTextInput";
+import { TextInput } from "react-native";
 
 export default function App() {
   // console.log(Dimensions.get("screen"));
@@ -41,7 +43,11 @@ export default function App() {
     // <ViewImageScreen />
     // <MessagesScreen />
     // <AccountScreen />
-    <ListingsScreen />
+    // <ListingsScreen />
+    <View>
+      <Text>TEXTINPUT</Text>
+      <AppTextInput placeholder="Username" />
+    </View>
     // <SafeAreaView style={styles.container}>
     //   <Text onPress={handlePress}>1234</Text>
     //   <TouchableWithoutFeedback
