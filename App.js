@@ -26,6 +26,13 @@ import AccountScreen from "./app/AccountScreen";
 import ListingsScreen from "./app/ListingsScreen";
 import AppTextInput from "./app/components/AppTextInput";
 import { TextInput } from "react-native";
+import AppPicker from "./app/components/AppPicker";
+
+const categories = [
+  { label: "Furniture", value: 1 },
+  { label: "Clothing", value: 2 },
+  { label: "Cameras", value: 3 },
+];
 
 export default function App() {
   // console.log(Dimensions.get("screen"));
@@ -45,7 +52,12 @@ export default function App() {
     // <AccountScreen />
     // <ListingsScreen />
     <View>
-      <Text>TEXTINPUT</Text>
+      <AppPicker
+        items={categories}
+        icon={require("./app/assets/apps.png")}
+        placeholder="Categories"
+      />
+      {/* <Image resizeMode="contain" source={require("./app/assets/apps.png")} /> */}
       <AppTextInput placeholder="Username" />
     </View>
     // <SafeAreaView style={styles.container}>
