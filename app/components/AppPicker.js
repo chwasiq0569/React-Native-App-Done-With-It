@@ -34,9 +34,12 @@ function AppPicker({ icon, items, placeholder, selectedItem, onSelectItem }) {
               style={{ width: 20, height: 20, marginRight: 20 }}
             />
           )}
-          <AppText style={styles.appText}>
-            {selectedItem ? selectedItem?.label : placeholder}
-          </AppText>
+          {selectedItem ? (
+            <AppText style={styles.appText}>{selectedItem?.label}</AppText>
+          ) : (
+            <AppText style={styles.placeholder}>{placeholder}</AppText>
+          )}
+
           <Image
             resizeMode="contain"
             source={require("../assets/arrowdown.png")}
@@ -79,6 +82,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   icon: { width: 20, height: 20, marginRight: 20 },
+  placeholder: {
+    color: colors.medium,
+  },
+  text: {
+    flex: 1,
+  },
 });
 
 export default AppPicker;
