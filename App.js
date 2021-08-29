@@ -15,7 +15,6 @@ import {
   Platform,
   Dimensions,
 } from "react-native";
-
 import Card from "./app/components/Card";
 import ListingDetailsScreen from "./app/components/ListingDetailsScreen";
 import MessagesScreen from "./app/MessagesScreen";
@@ -27,6 +26,7 @@ import ListingsScreen from "./app/ListingsScreen";
 import AppTextInput from "./app/components/AppTextInput";
 import { TextInput } from "react-native";
 import AppPicker from "./app/components/AppPicker";
+import LoginScreen from "./app/LoginScreen";
 
 const categories = [
   { label: "Furniture", value: 1 },
@@ -35,12 +35,6 @@ const categories = [
 ];
 
 export default function App() {
-  // console.log(Dimensions.get("screen"));
-  // console.log(Dimensions.get("window"));
-
-  // useDimensions();
-
-  // const handlePress = () => console.log("TEXT PRESSED");
   return (
     // <ListingDetailsScreen />
     // <WelcomeScreen />
@@ -51,15 +45,18 @@ export default function App() {
     // <MessagesScreen />
     // <AccountScreen />
     // <ListingsScreen />
-    <View>
-      <AppPicker
-        items={categories}
-        icon={require("./app/assets/apps.png")}
-        placeholder="Categories"
-      />
-      {/* <Image resizeMode="contain" source={require("./app/assets/apps.png")} /> */}
-      <AppTextInput placeholder="Username" />
-    </View>
+    // <View>
+    //   <AppPicker
+    //     selectedItem={category}
+    //     onSelectItem={setCategory}
+    //     items={categories}
+    //     icon={require("./app/assets/apps.png")}
+    //     placeholder="Categories"
+    //   />
+    //   {/* <Image resizeMode="contain" source={require("./app/assets/apps.png")} /> */}
+    // <Image source={require("./assets/jacket.jpg")} />
+    // </View>
+    <LoginScreen />
     // <SafeAreaView style={styles.container}>
     //   <Text onPress={handlePress}>1234</Text>
     //   <TouchableWithoutFeedback
@@ -87,13 +84,3 @@ export default function App() {
     // </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "red",
-    alignItems: "center",
-    justifyContent: "center",
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-});

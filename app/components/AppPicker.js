@@ -20,7 +20,7 @@ import AppText from "./AppText";
 import PickerItem from "./PickerItem";
 import Screen from "./Screen";
 
-function AppPicker({ icon, items, placeholder }) {
+function AppPicker({ icon, items, placeholder, selectedItem, onSelectItem }) {
   const [modalVisible, setModalVisible] = useState(false);
 
   return (
@@ -34,7 +34,9 @@ function AppPicker({ icon, items, placeholder }) {
               style={{ width: 20, height: 20, marginRight: 20 }}
             />
           )}
-          <AppText style={styles.appText}>{placeholder}</AppText>
+          <AppText style={styles.appText}>
+            {selectedItem ? selectedItem?.label : placeholder}
+          </AppText>
           <Image
             resizeMode="contain"
             source={require("../assets/arrowdown.png")}
@@ -50,7 +52,10 @@ function AppPicker({ icon, items, placeholder }) {
             renderItem={({ item }) => (
               <PickerItem
                 label={item.label}
-                onPress={() => console.log(item.label)}
+                onPress={() => {
+                  setModalVisible(false);
+                  onSelectItem(item);
+                }}
               />
             )}
           />

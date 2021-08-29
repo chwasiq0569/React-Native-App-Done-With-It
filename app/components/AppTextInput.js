@@ -7,7 +7,7 @@ import defaultStyles from "../config/styles";
 function AppTextInput({ icon, ...otherProps }) {
   return (
     <View style={styles.container}>
-      {icon && <Image resizeMode="contain" source={icon} style={styles.icon} />}
+      {icon && <Image style={styles.icon} source={icon} />}
       <TextInput style={defaultStyles.text} {...otherProps} />
     </View>
   );
@@ -18,11 +18,12 @@ const styles = StyleSheet.create({
     backgroundColor: colors.light,
     borderRadius: 25,
     flexDirection: "row",
+    alignItems: "center",
     width: "100%",
     padding: 15,
     marginVertical: 10,
   },
-  icon: { width: "20px", height: "20px", marginRight: 20 },
+  icon: { width: 25, height: 25, marginRight: 20 },
 });
 
 export default AppTextInput;
