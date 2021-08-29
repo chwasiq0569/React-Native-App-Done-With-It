@@ -1,8 +1,8 @@
 import React from "react";
 import { Platform, StyleSheet, TextInput, View } from "react-native";
 import { Image } from "react-native";
-import colors from "../config/colors";
-import defaultStyles from "../config/styles";
+import colors from "../../config/colors";
+import defaultStyles from "../../config/styles";
 
 function AppTextInput({ icon, ...otherProps }) {
   return (

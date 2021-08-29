@@ -23,10 +23,11 @@ import Screen from "./app/components/Screen";
 import ListItem from "./app/components/ListItem";
 import AccountScreen from "./app/AccountScreen";
 import ListingsScreen from "./app/ListingsScreen";
-import AppTextInput from "./app/components/AppTextInput";
+import AppTextInput from "./app/components/forms/AppTextInput";
 import { TextInput } from "react-native";
 import AppPicker from "./app/components/AppPicker";
 import LoginScreen from "./app/LoginScreen";
+import ListingsEditScreen from "./app/ListingsEditScreen";
 
 const categories = [
   { label: "Furniture", value: 1 },
@@ -56,7 +57,8 @@ export default function App() {
     //   {/* <Image resizeMode="contain" source={require("./app/assets/apps.png")} /> */}
     // <Image source={require("./assets/jacket.jpg")} />
     // </View>
-    <LoginScreen />
+    // <LoginScreen />
+    <ListingsEditScreen />
     // <SafeAreaView style={styles.container}>
     //   <Text onPress={handlePress}>1234</Text>
     //   <TouchableWithoutFeedback
